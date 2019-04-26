@@ -75,8 +75,8 @@ class SysService:
             return None
 
         # 注册成功
-        context.service.serviceData = data;
-        context.client.regSuccess = True;
+        context.service.serviceData = data
+        context.client.regSuccess = True
 
         context.service.log('RPC服务注册成功，服务名: %s->%s' % (context.service.appName, context.service.serviceName))
 

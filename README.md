@@ -49,7 +49,7 @@ service = xdapp.ServiceAgent('appName', 'serviceName', 'key')
 参数         |   说明
 ------------|---------------------
 service     | 当前服务
-client      | 通信的 `XDAppClient` 对象，可以使用 `close()` 方法关闭连接
+client      | 通信的 `XDAppProtocol` 对象，可以使用 `close()` 方法关闭连接
 requestId   | 请求的ID
 appId       | 请求的应用ID
 serviceId   | 请求发起的服务ID，0表示XDApp系统请求，1表示来自浏览器的请求
@@ -78,7 +78,11 @@ userdata    | 默认 {} 对象，可以自行设置参数
 
 注册一个RPC方法到服务上，它是 `service.addFunction()` 方法的封装，差别在于会自动对 `alias` 增加 `serviceName` 前缀
 
-`register.register(hello, 'hello')` 相当于 `register.register(hello, 'servicename_hello')`
+`register.register(hello, 'hello')` 相当于 `register.addFunction(hello, 'servicename_hello')`
+
+### `addFunction(function, alias = None, resultMode = HproseResultMode.Normal, simple = None)`
+
+注册一个RPC方法到服务上
 
 
 ### `addStaticMethods(cls, aliasPrefix = None, resultMode = HproseResultMode.Normal, simple = None)`
