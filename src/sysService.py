@@ -86,6 +86,11 @@ class SysService:
         context.service.log(log, type, data)
 
     @staticmethod
+    # ping
+    def ping():
+        return True
+
+    @staticmethod
     def getFunctions():
         context = getCurrentContext()
         if (False == context.client.regSuccess):
