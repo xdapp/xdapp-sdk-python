@@ -77,6 +77,12 @@ class SysService:
             service.log('RPC验证超时，服务名: %s->%s' % (context.service.appName, context.service.serviceName))
             return None
 
+        # 不接受低于16位长度的rand# 
+        if (len(rand) < 16)
+            context.service.log('regOk() 回调 rand 参数太短，服务名: %s->%s' % (context.service.appName, context.service.serviceName))
+            return None
+        
+
         if (getHash(context, time, rand) != hash):
             # 验证失败
             context.service.log('RPC验证失败，服务名: %s->%s' % (context.service.appName, context.service.serviceName))
