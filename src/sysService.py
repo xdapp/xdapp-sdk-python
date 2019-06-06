@@ -20,23 +20,32 @@ class SysService:
     def reg(time, rand, hash):
         context = getCurrentContext()
         if (None == context.service):
-            return False
+            return {
+                'status': False
+            }
         
         if (context.client.regSuccess == True):
-            return False
+            return {
+                'status': False
+            }
 
         if (hash != sha1('%s.%s.xdapp.com' % (time, rand))):
             # 验证失败
-            return False
+            return {
+                'status': False
+            }
 
         now = int(Time.time())
         if (abs(now - time) > 60):
             # 超时
-            return False
+            return {
+                'status': False
+            }
 
         context.client.isRegError = False
         newRand = getRand()
         return {
+            'status': True,
             'app': context.service.appName,
             'name': context.service.serviceName,
             'time': now,
