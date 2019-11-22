@@ -7,7 +7,7 @@ if sys.version_info < (3, 5):
 
 args = dict(
     name = 'xdapp',
-    version = '1.0.0',
+    version = '1.0.1',
     description = 'XDAPP Python SDK',
     long_description = open('README.md').read(),
     keywords = "xdapp hprose rpc service",

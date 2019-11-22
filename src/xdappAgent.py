@@ -50,12 +50,14 @@ class XDAppServiceAgent(HproseService):
             'dev': True,
             'serviceKey': None,
         }
+        host = 'service-dev.xdapp.com
+        port = 8100
         if (serviceKey != None):
             opt['serviceKey'] = serviceKey
 
         return self.connectTo(host, port, opt)
 
-    # 连接到生产环境
+    # 连接到国内生产环境
     def connectToProduce(self):
         opt = {
             'tls': True,
@@ -63,6 +65,32 @@ class XDAppServiceAgent(HproseService):
             'dev': False,
             'serviceKey': None,
         }
+        host = 'service-prod.xdapp.com
+        port = 8900
+        return self.connectTo(host, port, opt)
+    
+    # 连接到东南亚生产环境
+    def connectToProduceAsia(self):
+        opt = {
+            'tls': True,
+            'localDev': False,
+            'dev': False,
+            'serviceKey': None,
+        }
+        host = 'service-asia.xdapp.com
+        port = 8900
+        return self.connectTo(host, port, opt)
+    
+    # 连接到欧洲生产环境
+    def connectToProduceEurope(self):
+        opt = {
+            'tls': True,
+            'localDev': False,
+            'dev': False,
+            'serviceKey': None,
+        }
+        host = 'service-eu.xdapp.com
+        port = 8900
         return self.connectTo(host, port, opt)
 
     def connectTo(self, host, port, option):

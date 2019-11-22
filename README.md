@@ -60,7 +60,15 @@ userdata    | 默认 {} 对象，可以自行设置参数
 
 ### `connectToProduce()`
 
-连接到生产环境，将会创建一个异步tls连接接受和发送RPC数据，无需自行暴露端口，如果遇到网络问题和服务器断开可以自动重连，除非是因为密钥等问题导致的断开将不会重新连接
+连接到国内生产环境，将会创建一个异步tls连接接受和发送RPC数据，无需自行暴露端口，如果遇到网络问题和服务器断开可以自动重连，除非是因为密钥等问题导致的断开将不会重新连接
+
+### `connectToProduceAsia()`
+
+连接到东南亚正式环境，同 `connectToProduce()` 差别在于项目是部署在东南亚的
+
+### `connectToProduceEurope()`
+
+连接到欧洲正式环境，同 `connectToProduce()` 差别在于项目是部署在欧洲的
 
 ### `connectToDev(serviceKey = None)`
 
