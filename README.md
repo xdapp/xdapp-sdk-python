@@ -22,16 +22,16 @@ def hello(name):
     print(context.adminId)
 
     # 返回内容
-	return 'Hello %s!' % name
+    return 'Hello %s!' % name
 
 def main():
-	service = xdapp.ServiceAgent('appName', 'serviceName', 'key')
-	service.register(hello, 'hello')
-	service.connectToProduce()
+    service = xdapp.ServiceAgent('appName', 'serviceName', 'key')
+    service.register(hello, 'hello')
+    service.connectToProduce()
     service.runForever()
 
 if __name__ == '__main__':
-	main()
+    main()
 ```
 
 ## 常用方法
