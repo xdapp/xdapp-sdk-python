@@ -82,11 +82,11 @@ userdata    | 默认 {} 对象，可以自行设置参数
 
 一个 `service` 可以同时连接 `connectToProduce`, `connectToDev`, `connectToLocalDev` 3个，但需要保证使用正确的密钥。但不建议将测试环境的连接到生产环境服务器里
 
-### `register(function, alias = None, resultMode = HproseResultMode.Normal, simple = None)`
+### `addWebFunction(function, alias = None, resultMode = HproseResultMode.Normal, simple = None)`
 
-注册一个RPC方法到服务上，它是 `service.addFunction()` 方法的封装，差别在于会自动对 `alias` 增加 `serviceName` 前缀
+注册一个可用于Web调用的RPC方法到服务上，它是 `service.addFunction()` 方法的封装，差别在于会自动对 `alias` 增加 `serviceName` 前缀
 
-`register.register(hello, 'hello')` 相当于 `register.addFunction(hello, 'servicename_hello')`
+`register.addWebFunction(hello, 'hello')` 相当于 `register.addFunction(hello, 'servicename_hello')`
 
 ### `addFunction(function, alias = None, resultMode = HproseResultMode.Normal, simple = None)`
 

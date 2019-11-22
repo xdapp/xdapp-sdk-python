@@ -121,7 +121,7 @@ class XDAppServiceAgent(HproseService):
     def getCurrentContext():
         return getCurrentContext()
 
-    def register(self, function, alias = None, resultMode = HproseResultMode.Normal, simple = None):
+    def addWebFunction(self, function, alias = None, resultMode = HproseResultMode.Normal, simple = None):
         if isinstance(function, str):
             function = getattr(modules['__main__'], function, None)
         if not hasattr(function, '__call__'):
