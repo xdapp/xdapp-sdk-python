@@ -50,7 +50,7 @@ class XDAppServiceAgent(HproseService):
             'dev': True,
             'serviceKey': None,
         }
-        host = 'service-dev.xdapp.com
+        host = 'service-dev.xdapp.com'
         port = 8100
         if (serviceKey != None):
             opt['serviceKey'] = serviceKey
@@ -65,7 +65,7 @@ class XDAppServiceAgent(HproseService):
             'dev': False,
             'serviceKey': None,
         }
-        host = 'service-prod.xdapp.com
+        host = 'service-prod.xdapp.com'
         port = 8900
         return self.connectTo(host, port, opt)
     
@@ -77,7 +77,7 @@ class XDAppServiceAgent(HproseService):
             'dev': False,
             'serviceKey': None,
         }
-        host = 'service-asia.xdapp.com
+        host = 'service-asia.xdapp.com'
         port = 8900
         return self.connectTo(host, port, opt)
     
@@ -89,7 +89,7 @@ class XDAppServiceAgent(HproseService):
             'dev': False,
             'serviceKey': None,
         }
-        host = 'service-eu.xdapp.com
+        host = 'service-eu.xdapp.com'
         port = 8900
         return self.connectTo(host, port, opt)
 

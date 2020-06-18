@@ -78,7 +78,7 @@ class SysService:
             return None
 
         # 不接受低于16位长度的rand# 
-        if (len(rand) < 16)
+        if (len(rand) < 16):
             context.service.log('regOk() 回调 rand 参数太短，服务名: %s->%s' % (context.service.appName, context.service.serviceName))
             return None
         
